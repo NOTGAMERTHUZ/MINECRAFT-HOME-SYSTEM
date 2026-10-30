@@ -1,0 +1,106 @@
+# ============================================================
+#  GamerthuzHomes - developed by Gamerthuz
+#  Text uses MiniMessage: https://docs.advntr.dev/minimessage/format.html
+#  Home limit per rank: give players the permission gamerthuz.homes.limit.<number>
+#  (example: gamerthuz.homes.limit.10). Unlimited: gamerthuz.homes.unlimited
+#  The limit counts per world group (Survival homes and Lifesteal homes are separate).
+# ============================================================
+settings:
+  default-limit: 3
+  default-home-name: home
+  cooldown: 5                # seconds between home teleports
+  warmup: 3                  # seconds to stand still (0 = instant)
+  cancel-on-move: true
+  cancel-on-damage: true
+  animated-gui: true         # moving neon scanner around the menu border
+  prompt-timeout: 30         # seconds to type a name in chat
+
+# ---------- World groups (Multiverse) ----------
+# Features work only INSIDE one enabled group, never between two groups.
+# Worlds that are not listed here are disabled. World names must match Multiverse exactly.
+world-groups:
+  survival:
+    display: "Survival"
+    enabled: true
+    worlds: [Survival, Survival_nether, Survival_the_end]
+  lifesteal:
+    display: "Lifesteal"
+    enabled: false
+    worlds: [lifesteal, lifesteal_nether, lifesteal_the_end]
+  pvp:
+    display: "PvP"
+    enabled: false
+    worlds: [pvp]
+
+cost:
+  set: 0                     # price to create a new home (Vault)
+  teleport: 0                # price per home teleport (Vault)
+
+# Icons players can choose for a home (max 28 are shown)
+icons:
+  - RED_BED
+  - GRASS_BLOCK
+  - OAK_LOG
+  - CRAFTING_TABLE
+  - FURNACE
+  - CHEST
+  - ENDER_CHEST
+  - ANVIL
+  - ENCHANTING_TABLE
+  - BREWING_STAND
+  - BEACON
+  - DIAMOND
+  - EMERALD
+  - GOLD_INGOT
+  - NETHERITE_INGOT
+  - LANTERN
+  - CAMPFIRE
+  - BOOKSHELF
+  - WHEAT
+  - FISHING_ROD
+  - IRON_PICKAXE
+  - DIAMOND_SWORD
+  - SHIELD
+  - ELYTRA
+  - NETHERRACK
+  - END_STONE
+  - AMETHYST_BLOCK
+  - SEA_LANTERN
+
+messages:
+  player-only: "<red>Only players can use this."
+  no-permission: "<red>You don't have permission."
+  invalid-name: "<red>Names can use letters, numbers, _ and - (1-16 characters)."
+  limit-reached: "<red>You reached your home limit (<white><limit><red>)."
+  world-disabled: "<red>Homes are disabled in this world."
+  cross-world-blocked: "<red>That home is in a different world group. Homes only work inside their own group."
+  world-missing: "<red>That home's world is not loaded."
+  home-set: "<#00f5ff>Home <white><home> <#00f5ff>saved at your location."
+  home-moved: "<#00f5ff>Home <white><home> <#00f5ff>moved to your location."
+  home-deleted: "<yellow>Home <white><home> <yellow>deleted."
+  home-renamed: "<#00f5ff>Renamed <white><old> <#00f5ff>to <white><new><#00f5ff>."
+  name-taken: "<red>You already have a home called <white><home><red>."
+  not-found: "<red>Home <white><home> <red>not found."
+  no-homes: "<red>You have no homes. Use <white>/sethome <name><red> or open <white>/homes<red>."
+  not-public: "<red>That home is private."
+  player-not-found: "<red>Player not found."
+  busy: "<red>You already have a teleport in progress."
+  cooldown: "<red>Wait <white><seconds>s <red>before teleporting again."
+  not-enough-money: "<red>You need <white><cost> <red>for this."
+  cost-charged: "<gray>Charged <white><cost><gray>."
+  warmup-start: "<#00f5ff>Teleporting in <white><seconds>s<#00f5ff>. Don't move!"
+  warmup-cancelled: "<red>Teleport cancelled."
+  teleported: "<#00f5ff>Welcome to <white><home><#00f5ff>."
+  teleport-failed: "<red>Teleport failed."
+  favorite-on: "<gold>★ <white><home> <gold>is now your favorite. <gray>(/home uses it)"
+  favorite-off: "<yellow><home> is no longer your favorite."
+  public-on: "<green><home> is now public. Others can use <white>/home <you>:<home>"
+  public-off: "<yellow><home> is now private."
+  icon-changed: "<#00f5ff>Icon updated."
+  prompt-new: "<#00f5ff>Type a name for the new home in chat. <gray>(or <white>cancel<gray>, <white><seconds>s<gray>)"
+  prompt-rename: "<#00f5ff>Type the new name in chat. <gray>(or <white>cancel<gray>, <white><seconds>s<gray>)"
+  prompt-cancelled: "<yellow>Cancelled."
+  prompt-expired: "<yellow>Timed out."
+  usage-delhome: "<gray>Usage: <white>/delhome <name>"
+  usage-renamehome: "<gray>Usage: <white>/renamehome <old> <new>"
+  reloaded: "<green>Config reloaded."

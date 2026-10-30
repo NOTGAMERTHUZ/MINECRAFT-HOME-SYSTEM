@@ -1,0 +1,44 @@
+name: GamerthuzHomes
+version: 1.1.0
+main: com.gamerthuz.homes.HomesPlugin
+api-version: '26.2'
+author: Gamerthuz
+website: https://github.com/Gamerthuz/GamerthuzHomes
+description: Advanced homes with a futuristic animated GUI, public homes and favorites by Gamerthuz
+softdepend: [Vault]
+commands:
+  sethome:
+    description: Save a home at your location
+    usage: /sethome [name]
+    permission: gamerthuz.homes.use
+  home:
+    description: Teleport to a home
+    usage: /home [name | player:name]
+    permission: gamerthuz.homes.use
+  delhome:
+    description: Delete a home
+    usage: /delhome <name>
+    aliases: [removehome, rmhome]
+    permission: gamerthuz.homes.use
+  renamehome:
+    description: Rename a home
+    usage: /renamehome <old> <new>
+    permission: gamerthuz.homes.use
+  homes:
+    description: Open the homes menu
+    usage: /homes [public|reload|about]
+    aliases: [homemenu, hm]
+    permission: gamerthuz.homes.use
+permissions:
+  gamerthuz.homes.use:
+    default: true
+  gamerthuz.homes.unlimited:
+    default: op
+  gamerthuz.homes.bypass.cooldown:
+    default: op
+  gamerthuz.homes.bypass.warmup:
+    default: op
+  gamerthuz.homes.bypass.cost:
+    default: op
+  gamerthuz.homes.admin:
+    default: op
